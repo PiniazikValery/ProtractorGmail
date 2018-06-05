@@ -9,7 +9,7 @@ class StartPage
         this.SignInButton=element(by.xpath("//a[contains(text(),'Sign In')]"));        
     }
 
-     ClickSignIn()
+     clickSignIn()
     {
         this.SignInButton.click();  
         return LoginPage.EmailInput.isPresent();         

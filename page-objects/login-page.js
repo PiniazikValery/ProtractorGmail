@@ -10,31 +10,31 @@ class LoginPage
         this.DoneButton=element(by.xpath("//span[contains(text(),'Done')]"));
     }
 
-    SendKyesIntoEmailInput(keys)
+    sendKyesIntoEmailInput(keys)
     {
         this.EmailInput.sendKeys(keys);      
         return this.NextButton.isPresent();                
     }
 
-    ClickNextAfterEmail()
+    clickNextAfterEmail()
     {
         this.NextButton.click();   
         return browser.wait(protractor.ExpectedConditions.visibilityOf(this.Password),10000,"Cant find password input");     
     }        
     
-    ClickNextAfterPassword()
+    clickNextAfterPassword()
     {
         this.NextButton.click();  
         return browser.wait(protractor.ExpectedConditions.visibilityOf(MailPage.WriteMessageButton),10000,"Cant find write message button");
     }
 
-    ClickDoneButton()
+    clickDoneButton()
     {
         this.DoneButton.click();
         return browser.wait(protractor.ExpectedConditions.visibilityOf(MailPage.WriteMessageButton),10000,"Cant find write message button");
     }
     
-    SendKyesIntoPassword(keys)
+    sendKyesIntoPassword(keys)
     {      
         this.Password.sendKeys(keys);    
         return this.NextButton.isPresent();    
