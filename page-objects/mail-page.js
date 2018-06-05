@@ -10,36 +10,36 @@ class MailPage
         this.SentMessage=element(by.xpath("//div[@data-message-id]//div[@dir='ltr']"));
     }
 
-    ClickWriteMessage()
+    clickWriteMessage()
     {
         this.WriteMessageButton.click();
         return browser.wait(protractor.ExpectedConditions.visibilityOf(this.Recipient),10000,"Cant find recipient input");             
     }
 
-    WriteRecipient(recipient)
+    writeRecipient(recipient)
     {
         this.Recipient.sendKeys(recipient);
         return this.MessageTextBox.isPresent();
     }
 
-    WriteMessage(message)
+    writeMessage(message)
     {
         this.MessageTextBox.sendKeys(message);  
         return this.SendButton.isPresent();      
     }    
 
-    ClickSendMessage()
+    clickSendMessage()
     {
         this.SendButton.click();
         return browser.wait(protractor.ExpectedConditions.visibilityOf(this.LookAtMessageButton),10000,"Cant find look at message link");  
     }
 
-    ClickLookAtMessageLink()
+    clickLookAtMessageLink()
     {
         this.LookAtMessageButton.click();
         return browser.wait(protractor.ExpectedConditions.visibilityOf(this.SentMessage),10000,"Cant find sent message");
     }
-    LookAtSentMessage()
+    lookAtSentMessage()
     {
         return this.SentMessage.getText();
     }
